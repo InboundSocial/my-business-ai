@@ -26,6 +26,8 @@ Before answering ANY question about the business, read the relevant files:
 | Draft a reply to a customer message | `message-responder` |
 | Create an estimate, quote, or proposal | `estimate-writer` |
 | Process or triage an email | `email-triage` |
+| Research competitors and identify market gaps | `competitive-landscape` |
+| Build or improve an offer package and pricing structure | `offer-architect` |
 
 ## Database Queries
 

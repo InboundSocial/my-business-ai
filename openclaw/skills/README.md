@@ -11,6 +11,8 @@ These are your AI agent's capabilities — specialized instructions that tell it
 | **message-responder** | Draft replies to customer texts and messages |
 | **estimate-writer** | Generate professional estimates from your price book |
 | **email-triage** | Sort and safely process incoming emails |
+| **competitive-landscape** | Research competitors, customer language, and market gaps |
+| **offer-architect** | Build stronger offers with positioning, pricing, and guarantees |
 
 ## How Skills Work
 

@@ -6,7 +6,7 @@ Each subdirectory here is an agent — a persona with specific skills, knowledge
 
 | Agent | Role | Skills |
 |-------|------|--------|
-| **main** | General business assistant | copywriter, message-responder, estimate-writer, social-repurposer, email-triage |
+| **main** | General business assistant | copywriter, message-responder, estimate-writer, social-repurposer, email-triage, competitive-landscape, offer-architect |
 
 ## Adding Agents
 

@@ -12,6 +12,8 @@ skills:
   - estimate-writer
   - social-repurposer
   - email-triage
+  - competitive-landscape
+  - offer-architect
 
 # Knowledge directories this agent can read
 knowledge:
