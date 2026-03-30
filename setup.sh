@@ -11,7 +11,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$SCRIPT_DIR"
-OPENCLAW_DIR="$HOME/.openclaw"
+OPENCLAW_DIR="${OPENCLAW_DIR:-$HOME/.openclaw}"
 AGENT_DIR="$REPO_ROOT/openclaw/agents/main"
 AGENT_YAML="$AGENT_DIR/agent.yaml"
 
@@ -144,8 +144,16 @@ echo "✅ Pricebook linked: shared/pricebook/ → pricebook/"
 echo ""
 echo "🧩 Linking skills from agent manifest..."
 
-# Parse skills from agent.yaml (simple grep — no yq dependency needed)
-SKILLS=$(grep -A 100 '^skills:' "$AGENT_YAML" | grep '^\s*-\s*' | sed 's/^\s*-\s*//' | head -20)
+# Parse skills from agent.yaml without external YAML tooling.
+# Read only the skills list and stop at the next top-level key.
+SKILLS=$(awk '
+  /^skills:[[:space:]]*$/ { in_skills=1; next }
+  in_skills && /^[^[:space:]]/ { exit }
+  in_skills && /^[[:space:]]*-[[:space:]]*/ {
+    sub(/^[[:space:]]*-[[:space:]]*/, "", $0)
+    print
+  }
+' "$AGENT_YAML")
 
 SKILL_COUNT=0
 while IFS= read -r skill; do
