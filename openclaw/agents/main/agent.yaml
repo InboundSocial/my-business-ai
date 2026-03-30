@@ -1,0 +1,22 @@
+# Agent Manifest — Main Business Assistant
+# This file declares what this agent can do and what it can access.
+# setup.sh reads this to configure the OpenClaw runtime.
+
+name: main
+role: General business assistant for a trade service company
+
+# Skills this agent can use (must exist in openclaw/skills/)
+skills:
+  - copywriter
+  - message-responder
+  - estimate-writer
+  - social-repurposer
+  - email-triage
+
+# Knowledge directories this agent can read
+knowledge:
+  - knowledge/
+
+# Pricing data this agent can read
+pricebook:
+  - pricebook/
